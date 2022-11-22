@@ -1,40 +1,42 @@
 :root {
-    --primaryClr: #202020;
-    --selectedClr: #4a4a4a;
-    --hoverClr: #666666;
-    --secondaryBtnClr: #aaaaaa;
-    --disabledClr: #d2d4d7;
-    --whiteClr: #ffffff;
-    --boxShadowClr1: 0 4px 4px 0 rgba(2, 12, 27, 0.25);
-    --boxShadowClr2: 0 6px 23px 0 rgba(2, 12, 27, 0.25);
-  }
+  --primaryClr: #202020;
+  --selectedClr: #4a4a4a;
+  --hoverClr: #666666;
+  --secondaryBtnClr: #aaaaaa;
+  --disabledClr: #d2d4d7;
+  --whiteClr: #ffffff;
+  --boxShadowClr1: 0 4px 4px 0 rgba(2, 12, 27, 0.25);
+  --boxShadowClr2: 0 6px 23px 0 rgba(2, 12, 27, 0.25);
+  --smallTxt: 15px;
+  --largeTxt: 26px;
+  --btnTxtSize: 18px;
+}
 
-  body{
-    font-family: Poppins, sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 150%;
-    color: var(--primaryClr);
-  }
-  
-  .small-txt{
-    font-size: 15px;
-  }
-  
-  .btn-txt{
-    font-size: 18px;
-    color: var(--whiteClr);
-  }
-  
-  .title-txt{
-    font-weight: 500;
-    font-size: 26px;
-  }
-  
-  .logo-txt{
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.4em;
-    color: var(--whiteClr);
-  }
-  
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--primaryClr);
+}
+
+.small-txt {
+  font-size: var(--smallTxt)
+}
+
+.btn-txt {
+  font-size: var(--btnTxtSize);
+  color: var(--whiteClr);
+}
+
+.title-txt {
+  font-weight: 500;
+  font-size: var(--largeTxt);
+}
+
+.logo-txt {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.4em;
+  color: var(--whiteClr);
+}
