@@ -1,0 +1,39 @@
+header {
+    height: 100px;
+    background-color: var(--selectedClr);
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--whiteClr);
+}
+
+.navigation-wrapper {
+    display: flex;
+    width: 1100px;
+    margin: auto;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.logo {
+    line-height: 100px;
+}
+
+.checkBooking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--primaryClr);
+}
+
+.checkBooking:hover {
+    background-color: var(--hoverClr);
+}
+
+svg {
+    fill: var(--whiteClr);
+}
