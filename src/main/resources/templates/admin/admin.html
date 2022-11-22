@@ -4,12 +4,47 @@
 </head>
 <body>
     <main>
-        <div class="test-css1">
-            This is admin page 1
-        </div>
-    
-        <div class="test-css2">
-            This is admin page 2
+        <div class="reservation-container">
+            <h2 class="title-txt admin-title">Reservation Status</h2>
+
+            <!-- Todo: fetch data and display -->
+            <ul th:each="reservation: ${reservatoins}" class="reservation-list">
+                <li class="reservation-list-item">
+                    <div class="input-container">
+                        <label for="rooname">Room</label>
+                        <input id="rooname" type="text" th:value="${reservation.roomType}">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="username">Name</label> 
+                        <input id="username" type="text" th:value="${reservation.reservName}">
+                    </div>
+                   
+                    <div class="input-container">
+                        <label for="date">Reservation Date</label> 
+                        <input id="date" type="text" th:value="${reservation.reservDate}">
+                    </div>
+                   
+                    <div class="input-container">
+                        <label for="numOfPpl">Number Of People</label> 
+                        <input id="numOfPpl" type="text" th:value="${reservation.stayPeople}">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="phoneNumber">Phone Number</label> 
+                        <input id="phoneNumber" type="text" th:value="${reservation.phoneNumber}">    
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="email">Email Address</label> 
+                        <input id="email" type="text" th:value="${reservation.reservName}">
+                    </div>
+
+                    <button th:id="${reservation.reservNo}" class="confirm-btn">
+                        Confirm
+                    </button>
+                </li>
+            </ul>
         </div>
     </main>
     

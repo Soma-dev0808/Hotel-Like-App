@@ -1,0 +1,46 @@
+.reservation-container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.admin-title {
+    text-align: center;
+}
+
+.reservation-list {
+    padding: 0;
+}
+
+.reservation-list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    border: solid 1px var(--primaryClr);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: var(--smallTxt);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label {}
+
+.input-container input {
+    width: 90%;
+}
+
+.confirm-btn {
+    border: none;
+    height: 40px;
+    background-color: var(--primaryClr);
+    color: var(--whiteClr);
+    border-radius: 5px;
+    padding: 0 10px;
+}
