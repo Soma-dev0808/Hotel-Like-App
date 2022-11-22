@@ -8,46 +8,64 @@
             <h2 class="title-txt admin-title">Reservation Status</h2>
 
             <!-- Todo: fetch data and display -->
-            <ul th:each="reservation: ${reservatoins}" class="reservation-list">
-                <li class="reservation-list-item">
-                    <div class="input-container">
-                        <label for="rooname">Room</label>
-                        <input id="rooname" type="text" th:value="${reservation.roomType}">
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="username">Name</label> 
-                        <input id="username" type="text" th:value="${reservation.reservName}">
-                    </div>
-                   
-                    <div class="input-container">
-                        <label for="date">Reservation Date</label> 
-                        <input id="date" type="text" th:value="${reservation.reservDate}">
-                    </div>
-                   
-                    <div class="input-container">
-                        <label for="numOfPpl">Number Of People</label> 
-                        <input id="numOfPpl" type="text" th:value="${reservation.stayPeople}">
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="phoneNumber">Phone Number</label> 
-                        <input id="phoneNumber" type="text" th:value="${reservation.phoneNumber}">    
-                    </div>
-                    
-                    <div class="input-container">
-                        <label for="email">Email Address</label> 
-                        <input id="email" type="text" th:value="${reservation.reservName}">
-                    </div>
+            <ul  class="reservation-list">
+                <li 
+                    class="reservation-list-item" 
+                    th:each="reservation: ${reservatoins}"
+                    th:onclick="'enableForm(' + ${reservation.reservNo} + ');'"
+                >
+                    <form action="#">
+                        <fieldset 
+                            th:id="'field-set' + ${reservation.reservNo}" 
+                            disabled 
+                            class="reservation-list-fieldset"
+                        >
+                            <div class="input-container">
+                                <label for="rooname">Room</label>
+                                <input id="rooname" type="text" th:value="${reservation.roomType}">
+                            </div>
+                            
+                            <div class="input-container">
+                                <label for="username">Name</label> 
+                                <input id="username" type="text" th:value="${reservation.reservName}">
+                            </div>
+                        
+                            <div class="input-container">
+                                <label for="date">Start Date</label> 
+                                <input id="startDate" type="text" th:value="${reservation.startDate}">
+                            </div>
 
-                    <button th:id="${reservation.reservNo}" class="confirm-btn">
-                        Confirm
-                    </button>
+                            <div class="input-container">
+                                <label for="date">End Date</label> 
+                                <input id="endDate" type="text" th:value="${reservation.endDate}">
+                            </div>
+                        
+                            <div class="input-container">
+                                <label for="numOfPpl">Number Of People</label> 
+                                <input id="numOfPpl" type="text" th:value="${reservation.stayPeople}">
+                            </div>
+                            
+                            <div class="input-container">
+                                <label for="phoneNumber">Phone Number</label> 
+                                <input id="phoneNumber" type="text" th:value="${reservation.phoneNumber}">    
+                            </div>
+                            
+                            <div class="input-container">
+                                <label for="email">Email Address</label> 
+                                <input id="email" type="text" th:value="${reservation.reservName}">
+                            </div>
+
+                            <button th:id="${reservation.reservNo}" class="confirm-btn" type="submit">
+                                Confirm
+                            </button>
+                        </fieldset>
+                    </form>
                 </li>
             </ul>
         </div>
     </main>
-    
+   
+    <script type="text/javascript" th:src="@{/js/admin.js}"></script>
 </body>
 </html>
 
