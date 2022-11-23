@@ -12,17 +12,21 @@
 }
 
 .reservation-list-item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
     list-style-type: none;
     border: solid 1px var(--primaryClr);
     border-radius: 5px;
     padding: 10px;
     font-size: var(--smallTxt);
     width: fit-content;
-    margin: 0 auto;
+    margin: 10px auto;
+}
+
+.reservation-list-fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border: none;
 }
 
 .input-container {
