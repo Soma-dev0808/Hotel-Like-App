@@ -10,5 +10,5 @@ public interface iAuthRepository extends CrudRepository<User, Integer>{
 	 * @param email
 	 * @param password
 	 */
-	User findUser(String email, String password);
+	//User findUser(String email, String password);
 }
