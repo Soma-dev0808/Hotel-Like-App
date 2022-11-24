@@ -6,34 +6,21 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.lang.NonNull;
-
 @Entity
 @Table(name = "reservation")
 public class Reservation {
 
 	@Id
-	@NonNull
 	private int reservNo;
-	@NonNull
 	private int roomType;
-	@NonNull
 	private String reservName;
-	@NonNull
 	private int userId;
-	@NonNull
 	private Date startDate;
-	@NonNull
 	private Date endDate;
-	@NonNull
 	private String strStartDate;
-	@NonNull
 	private String strEndDate;
-	@NonNull
 	private int stayPeople;
-	@NonNull
 	private int phoneNumber;
-	@NonNull
 	private String email;
 
 	public Reservation() {

@@ -4,21 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.lang.NonNull;
-
 @Entity
 @Table(name = "user")
 public class User {
 	@Id
-	@NonNull
 	private int userId;
-	@NonNull
     private String userType;
-	@NonNull
-    private String userName;
-	@NonNull
     private int password;
-	@NonNull
     private String email;
 
     public User() {
@@ -27,11 +19,9 @@ public class User {
     public User(
     		int userId, 
     		String userType, 
-    		String userName, 
     		int password, 
     		String email) {
     	this.userType = userType;
-    	this.userName = userName;
     	this.password = password;
     	this.email = email;
     }
@@ -66,22 +56,6 @@ public class User {
      */
 	public void setUserType(String userType) {
 		this.userType = userType;
-	}
-
-	/**
-     * getter : userName
-     * @return userName
-     */
-	public String getUserName() {
-		return userName;
-	}
-
-	/**
-     * setter : userName
-     * @param userName
-     */
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	/**
