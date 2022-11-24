@@ -1,35 +1,44 @@
 package com.hotel_like.hotellikeapplication.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "user")
 public class User {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NonNull
 	private int userId;
-	
+	@NonNull
     private String userType;
+	@NonNull
     private String userName;
+	@NonNull
+    private int password;
+	@NonNull
     private String email;
 
     public User() {
     }
 
-    public User(String userType, String userName, String email) {
+    public User(
+    		int userId, 
+    		String userType, 
+    		String userName, 
+    		int password, 
+    		String email) {
     	this.userType = userType;
     	this.userName = userName;
+    	this.password = password;
     	this.email = email;
     }
     
     /**
      * getter : userId
-     * 
+     * @return userId
      */
 	public int getUserId() {
 		return userId;
@@ -45,7 +54,7 @@ public class User {
 
 	/**
      * getter : userType
-     * 
+     * @return userType
      */
 	public String getUserType() {
 		return userType;
@@ -61,7 +70,7 @@ public class User {
 
 	/**
      * getter : userName
-     * 
+     * @return userName
      */
 	public String getUserName() {
 		return userName;
@@ -76,8 +85,24 @@ public class User {
 	}
 
 	/**
+     * getter : password
+     * @return password
+     */
+	public int getPassword() {
+		return password;
+	}
+
+	/**
+     * setter : password
+     * @param password
+     */
+	public void setPassword(int password) {
+		this.password = password;
+	}
+
+	/**
      * getter : email
-     * 
+     * @return email
      */
 	public String getEmail() {
 		return email;

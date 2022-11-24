@@ -1,16 +1,18 @@
 package com.hotel_like.hotellikeapplication.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "room")
 public class Room {
 	@Id
+	@NonNull
 	private int roomType;
-	
+	@NonNull
 	private String roomName;
 	
 	public Room() {
@@ -24,7 +26,7 @@ public class Room {
 	
 	/**
      * getter : roomType
-     * 
+     * @return  roomType
      */
 	public int getRoomType() {
 		return roomType;
@@ -38,9 +40,9 @@ public class Room {
 		this.roomType = roomType;
 	}
 	
-	/*
+	/**
      * getter : roomName
-     * 
+     * @return  roomName
      */
 	public String getRoomName() {
 		return roomName;

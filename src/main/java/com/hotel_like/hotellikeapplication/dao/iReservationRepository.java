@@ -5,6 +5,7 @@ import java.util.List;
 // import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.hotel_like.hotellikeapplication.dto.ReservationInfo;
 import com.hotel_like.hotellikeapplication.entity.Reservation;
@@ -23,10 +24,15 @@ public interface iReservationRepository extends JpaRepository<Reservation, Integ
     public List<ReservationInfo> getAllReservList();
 
     /**
-     * get a reservaiton information
-     * 
-     * @param reservNo
-     * @param roomType
-     */
-    // Reservation getReservInfo(Integer reservNo, int roomType);
+	 * get a count 
+	 */
+	@Query(nativeQuery = true, value = "SELECT COUNT(*) FROM reservation;")
+	public int getCount();
+	
+	/**
+	 * get a reservaiton 
+	 * @param reservNo
+	 */
+	@Query(nativeQuery = true, value = "SELECT *  FROM reservation r WHERE r.reserv_no = :reservNo")
+	public Reservation getReservation(@Param("reservNo")int reservNo);
 }
