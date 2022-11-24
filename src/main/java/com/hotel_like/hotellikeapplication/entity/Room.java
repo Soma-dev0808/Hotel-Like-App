@@ -4,15 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.lang.NonNull;
-
 @Entity
 @Table(name = "room")
 public class Room {
 	@Id
-	@NonNull
 	private int roomType;
-	@NonNull
 	private String roomName;
 	
 	public Room() {
