@@ -9,15 +9,15 @@ import javax.persistence.Table;
 public class Room {
 	@Id
 	private int roomType;
-	private String roomName;
+	private int roomFlg;
 	
 	public Room() {
 		
 	}
 	
-	public Room(int roomType, String roomName) {
+	public Room(int roomType, int roomFlg) {
 		this.roomType = roomType;
-		this.roomName = roomName;
+		this.roomFlg = roomFlg;
 	}
 	
 	/**
@@ -37,18 +37,18 @@ public class Room {
 	}
 	
 	/**
-     * getter : roomName
-     * @return  roomName
+     * getter : roomFlg
+     * @return  roomFlg
      */
-	public String getRoomName() {
-		return roomName;
+	public Integer getRoomFlg() {
+		return roomFlg;
 	}
 	
 	/**
-     * setter : roomName
-     * @param roomName
+     * setter : roomFlg
+     * @param roomFlg
      */
-	public void setRoomName(String roomName) {
-		this.roomName = roomName;
+	public void setRoomFlg(int roomFlg) {
+		this.roomFlg = roomFlg;
 	}
 }
