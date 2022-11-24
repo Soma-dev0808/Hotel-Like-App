@@ -10,44 +10,48 @@ public class Room {
 	@Id
 	private int roomType;
 	private String roomName;
-	
+
 	public Room() {
-		
+
 	}
-	
+
 	public Room(int roomType, String roomName) {
 		this.roomType = roomType;
 		this.roomName = roomName;
 	}
-	
+
 	/**
-     * getter : roomType
-     * @return  roomType
-     */
+	 * getter : roomType
+	 * 
+	 * @return roomType
+	 */
 	public int getRoomType() {
 		return roomType;
 	}
-	
+
 	/**
-     * setter : roomType
-     * @param roomType
-     */
+	 * setter : roomType
+	 * 
+	 * @param roomType
+	 */
 	public void setRoomType(int roomType) {
 		this.roomType = roomType;
 	}
-	
+
 	/**
-     * getter : roomName
-     * @return  roomName
-     */
+	 * getter : roomName
+	 * 
+	 * @return roomName
+	 */
 	public String getRoomName() {
 		return roomName;
 	}
-	
+
 	/**
-     * setter : roomName
-     * @param roomName
-     */
+	 * setter : roomName
+	 * 
+	 * @param roomName
+	 */
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
