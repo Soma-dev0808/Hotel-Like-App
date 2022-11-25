@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:fragment="head">
-    <meta charset="UTF-8">
-    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
-    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script-->
-    <title th:text="${pageTitle}">PMA</title>
-    <link th:href="@{/styles/css/global.css}" rel="stylesheet" />
-    <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
-    <link th:href="@{/styles/css/admin.css}" rel="stylesheet" />
-    <link th:href="@{/styles/css/header.css}" rel="stylesheet" />
-    <link th:href="@{/styles/css/menu.css}" rel="stylesheet" />
-</head>
-<body>
-  <header th:fragment="nav">
-    <nav class="navigation-wrapper">
-      <div class="logo logo-txt"><a th:href="@{/user/menu.html}">VILLA CICCC</a></div>
-      <a class="checkBooking" th:href="@{/user/confirmation.html}">
-        <svg class="book-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 25"><path width="100%" d="M5.495 2h16.505v-2h-17c-1.656 0-3 1.343-3 3v18c0 1.657 1.344 3 3 3h17v-20h-16.505c-1.376 0-1.376-2 0-2zm.505 4h7v7l2-2 2 2v-7h3v16h-14v-16z"/></svg>
-      </a>
-    </nav>
-  </header>    
-</body>
+	<head th:fragment="head">
+		<meta charset="UTF-8" />
+		<!-- <link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+			integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+			crossorigin="anonymous"
+		></script> -->
+		<title th:text="${pageTitle}">PMA</title>
+		<link th:href="@{/styles/css/global.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/admin.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/login-signup.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/header.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/menu.css}" rel="stylesheet" />
+	</head>
+	<body>
+		<header th:fragment="nav">
+			<nav class="navigation-wrapper">
+				<div class="logo logo-txt"><a th:href="@{/user/menu.html}">VILLA CICCC</a></div>
+				<a class="checkBooking" th:href="@{/user/confirmation.html}">
+					<svg class="book-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 25">
+						<path
+							width="100%"
+							d="M5.495 2h16.505v-2h-17c-1.656 0-3 1.343-3 3v18c0 1.657 1.344 3 3 3h17v-20h-16.505c-1.376 0-1.376-2 0-2zm.505 4h7v7l2-2 2 2v-7h3v16h-14v-16z"
+						/>
+					</svg>
+				</a>
+			</nav>
+		</header>
+	</body>
 </html>
