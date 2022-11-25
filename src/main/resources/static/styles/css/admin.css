@@ -47,4 +47,10 @@
     color: var(--whiteClr);
     border-radius: 5px;
     padding: 0 10px;
+    cursor: pointer;
+}
+
+.confirm-btn:disabled {
+    background-color: var(--selectedClr);
+    cursor: default;
 }

@@ -16,7 +16,11 @@
                     th:data-id="${reservation.reservNo}"
                     th:onclick="enableForm(this.getAttribute('data-id'));"
                 >
-                    <form action="#">
+                    <form 
+                        action="#"
+                        th:action="@{/admin/update/{id}(id=${reservation.reservNo})}"
+                        method="POST"
+                    >
                         <fieldset 
                             th:id="'field-set' + ${reservation.reservNo}" 
                             disabled 
@@ -24,37 +28,73 @@
                         >
                             <div class="input-container">
                                 <label for="rooname">Room</label>
-                                <input id="rooname" type="text" th:value="${reservation.roomName}">
+                                <input 
+                                    id="rooname" 
+                                    type="text"
+                                    th:id="${reservation.roomName}"
+                                    th:value="${reservation.roomName}"
+                                    disabled
+                                >
                             </div>
                             
                             <div class="input-container">
                                 <label for="username">Name</label> 
-                                <input id="username" type="text" th:value="${reservation.reservName}">
+                                <input 
+                                    id="username" 
+                                    type="text" 
+                                    th:value="${reservation.reservName}"
+                                    name="reservName"
+                                >
                             </div>
                         
                             <div class="input-container">
                                 <label for="date">Start Date</label> 
-                                <input id="startDate" type="datetime" th:value="${reservation.startDate}">
+                                <input 
+                                    id="strStartDate" 
+                                    type="datetime" 
+                                    th:value="${reservation.strStartDate}"
+                                    name="strStartDate"
+                                >
                             </div>
 
                             <div class="input-container">
                                 <label for="date">End Date</label> 
-                                <input id="endDate" type="datetime" th:value="${reservation.endDate}">
+                                <input 
+                                    id="strEndDate" 
+                                    type="datetime" 
+                                    th:value="${reservation.strEndDate}"
+                                    name="strEndDate"
+                                >
                             </div>
                         
                             <div class="input-container">
                                 <label for="numOfPpl">Number Of People</label> 
-                                <input id="numOfPpl" type="number" th:value="${reservation.stayPeople}">
+                                <input 
+                                    id="numOfPpl" 
+                                    type="number" 
+                                    th:value="${reservation.stayPeople}"
+                                    name="stayPeople"
+                                >
                             </div>
                             
                             <div class="input-container">
                                 <label for="phoneNumber">Phone Number</label> 
-                                <input id="phoneNumber" type="text" th:value="${reservation.phoneNumber}">    
+                                <input 
+                                    id="phoneNumber" 
+                                    type="text" 
+                                    th:value="${reservation.phoneNumber}"
+                                    name="phoneNumber"
+                                >    
                             </div>
                             
                             <div class="input-container">
                                 <label for="email">Email Address</label> 
-                                <input id="email" type="email" th:value="${reservation.email}">
+                                <input 
+                                    id="email" 
+                                    type="email" 
+                                    th:value="${reservation.email}"
+                                    name="email"
+                                >
                             </div>
 
                             <button th:id="${reservation.reservNo}" class="confirm-btn" type="submit">

@@ -10,9 +10,9 @@ public interface ReservationInfo {
 
     public String getUserId();
 
-    public String getStartDate();
+    public String getStrStartDate();
 
-    public String getEndDate();
+    public String getStrEndDate();
 
     public String getStayPeople();
 

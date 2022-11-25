@@ -6,12 +6,13 @@ import org.springframework.data.repository.query.Param;
 
 import com.hotel_like.hotellikeapplication.entity.Room;
 
-public interface iRoomRepository  extends CrudRepository<Room, Integer>{
+public interface iRoomRepository extends CrudRepository<Room, Integer> {
 
 	/**
 	 * get a room data
+	 * 
 	 * @param roomType
 	 */
 	@Query(nativeQuery = true, value = "SELECT *  FROM room r WHERE r.room_type = :roomType")
-	public Room getRoomDataByRoomType(@Param("roomType")int roomType);
+	public Room getRoomDataByRoomType(@Param("roomType") int roomType);
 }
