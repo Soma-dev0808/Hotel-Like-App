@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head th:replace="layouts :: head (pageTitle = 'Log in')"></head>
+
+	<body class="text-center" cz-shortcut-listen="true">
+		<main class="form-signin w-100 m-auto container main-container">
+			<form action="/user/login" id="loginForm" method="post">
+				<div class="login-container">
+					<h1 class="h3 mb-3 fw-normal title-txt login-title">WELCOME TO VILLA CICCC</h1>
+					<div class="form-floating email-container">
+						<p class="small-txt enter-title">Email address</p>
+						<div class="enter-container">
+							<input type="email" class="form-control" id="userEmail" th:field="${user.email}" />
+						</div>
+					</div>
+					<div class="form-floating password-container">
+						<p class="small-txt enter-title">Password</p>
+						<div class="enter-container">
+							<input
+								type="password"
+								class="form-control"
+								id="userPassword"
+								maxlength="5"
+								required
+								th:field="${user.password}"
+							/>
+						</div>
+					</div>
+					<button class="btn btn-lg submit-button" type="submit">Log In</button>
+					<div class="checkbox move-button-container">
+						<p class="move-button-question">New to Villa CICCC?</p>
+						<a href="./signup" class="move-button">Sign Up</a>
+					</div>
+				</div>
+			</form>
+		</main>
+	</body>
+</html>

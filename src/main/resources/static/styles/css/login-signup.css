@@ -1,0 +1,74 @@
+.main-container {
+	text-align: center;
+	padding-top: 180px;
+}
+
+.login-container {
+	width: 430px;
+	margin: 0 auto;
+	border-radius: 5px;
+	box-shadow: 2px 2px 12px 12px #1416191a;
+}
+
+.login-title {
+	padding-top: 50px;
+}
+
+.enter-title {
+	margin: 0 auto;
+	text-align: left;
+	width: 90%;
+}
+
+.enter-container {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+}
+
+.email-container {
+	margin-bottom: 20px;
+}
+
+.password-container {
+	margin-bottom: 24px;
+}
+
+.submit-button {
+	width: 90%;
+	background-color: #202020;
+	color: #fff;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.submit-button:hover {
+	background-color: #4a4a4a;
+	color: #fff;
+}
+
+.move-button-container {
+	margin-top: 40px;
+	background-color: #4a4a4a;
+	border-radius: 0 0 10px 10px;
+}
+
+.move-button-question {
+	display: inline-block;
+	margin-top: 26px;
+	margin-right: 10px;
+	margin-bottom: 26px;
+	color: white;
+}
+
+.move-button {
+	display: inline-block;
+	margin-top: 26px;
+	margin-left: 10px;
+	margin-bottom: 26px;
+	color: #909294;
+}
+
+.move-button:hover {
+	color: #fff;
+}
