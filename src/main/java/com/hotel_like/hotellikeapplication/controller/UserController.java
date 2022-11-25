@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import com.hotel_like.hotellikeapplication.dao.iAuthRepository;
 import com.hotel_like.hotellikeapplication.entity.User;
 
@@ -27,7 +28,8 @@ public class UserController {
         if (userData != null) {
         if (userData.getUserType().equals("c")) {
             System.out.println("Here is working");
-            return "redirect:/user/menu";
+            //return "redirect:/user/menu";
+            return "redirect:/user/menu/?userId=" + userData.getUserId();
         } else {
             return "redirect:/admin";
         }
@@ -48,6 +50,7 @@ public class UserController {
         user.setUserId(userMaxNo);
         user.setUserType("c");
         authRepository.save(user);
-        return "redirect:/user/menu";
+        //return "redirect:/user/menu";
+        return "redirect:/user/menu/?userId=" + user.getUserId();
     }
 }

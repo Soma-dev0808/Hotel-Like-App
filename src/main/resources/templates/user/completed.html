@@ -5,11 +5,10 @@
 <body>
 	<header th:replace="layouts :: nav"></header>
 	<main>
-	<div class="container">
+	<div class="cmp-container">
 		<form action="/user/completed" id="checkForm" method="post">
-		<fieldset>
 			 <h2 class="title-txt" align="center">Reservation Completed</h2>
-				<div class="form-group mb-2">
+				<div class="comment">
 					<p align="center">We look forward to welcoming you !
 						<br>
 						If you want to change or cancel your reservation, please call here.
@@ -17,9 +16,10 @@
 						 123-456-789
 					 </p>
 				</div>
-				<button type="submit" class="confirm-btn" onclick="moveToCheck()">Check my reservation</button>
-				<button type="submit" class="confirm-btn"  onclick="moveToTop()">Return to the top page</button>
-			</fieldset>
+				<div class="btn-container">
+					<button type="submit" class="btn-txt cmp-confirm-btn" onclick="moveToCheck()">Check my reservation</button>
+					<button type="submit" class="btn-txt cmp-confirm-btn"  onclick="moveToTop()">Return to the top page</button>
+				</div>
 			<input type="hidden" name="page" th:value="${page}">
 			<input type="hidden" name="check" th:value="${check}">
 		</form>
