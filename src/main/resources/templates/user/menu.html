@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layouts :: head (pageTitle = 'OUR ROOMS')"></head>
+<body>
+  <header th:replace="layouts :: nav"></header>
+
+  <div class="content-wrapper">
+    <h2 class="title-txt">OUR ROOMS</h2>
+
+    <!-- *room list* -->
+    <div class="cards-wrapper">
+
+        <!-- *room1* -->
+        <!-- Vacant -->
+        <th:block th:if="${room1} == 0">
+            <a th:href="@{/user/reservation/(roomType=1)}">
+                <div class="card">
+                    <img class="card_imgframe" src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" width="100%" alt="Suite_1">
+                    <div class="card_textbox">
+                        <p><b>Suite Ⅰ</b><br>from $200 per night</p>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+        <!-- Reserved -->
+        <th:block th:if="${room1} == 1">
+            <div class="card card-reserved">
+                <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                <div class="card_textbox">
+                    <p><b>Suite Ⅰ</b><br>from $200 per night<br><b class="text-reserved">Reserved</b></p>
+                </div>
+            </div>
+        </th:block>
+        <!-- /*room1* -->
+
+
+        <!-- *room2* -->
+        <!-- Vacant -->
+        <th:block th:if="${room2} == 0">
+            <a th:href="@{/user/reservation/(roomType=2)}">
+                <div class="card">
+                    <img class="card_imgframe" src="https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3520&q=80" width="100%" alt="Suite_2">
+                    <div class="card_textbox">
+                        <p><b>Suite Ⅱ</b><br>from $200 per night</p>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+        <!-- Reserved -->
+        <th:block th:if="${room2} == 1">
+            <div class="card card-reserved">
+                <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                <div class="card_textbox">
+                    <p><b>Suite Ⅱ</b><br>from $200 per night<br><b class="text-reserved">Reserved</b></p>
+                </div>
+            </div>
+        </th:block>
+        <!-- /*room2* -->
+
+
+        <!-- *room3* -->
+        <!-- Vacant -->
+        <th:block th:if="${room3} == 0">
+            <a th:href="@{/user/reservation/(roomType=3)}">
+                <div class="card">
+                    <img class="card_imgframe" src="https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_3">
+                    <div class="card_textbox">
+                        <p><b>Suite Ⅲ</b><br>from $200 per night</p>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+        <!-- Reserved -->
+        <th:block th:if="${room3} == 1">
+            <div class="card card-reserved">
+                <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                <div class="card_textbox">
+                    <p><b>Suite Ⅲ</b><br>from $200 per night<br><b class="text-reserved">Reserved</b></p>
+                </div>
+            </div>
+        </th:block>
+        <!-- /*room3* -->
+
+
+        <!-- *room4* -->
+        <!-- Vacant -->
+        <th:block th:if="${room4} == 0">
+            <a th:href="@{/user/reservation/(roomType=4)}">
+                <div class="card">
+                    <img class="card_imgframe" src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" width="100%" alt="Suite_4">
+                    <div class="card_textbox">
+                        <p><b>Suite Ⅳ</b><br>from $200 per night</p>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+        <!-- Reserved -->
+        <th:block th:if="${room4} == 1">
+            <div class="card card-reserved">
+                <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                <div class="card_textbox">
+                    <p><b>Suite Ⅳ</b><br>from $200 per night<br><b class="text-reserved">Reserved</b></p>
+                </div>
+            </div>
+        </th:block>
+        <!-- /*room4* -->
+
+
+        <!-- *room5* -->
+        <!-- Vacant -->
+        <th:block th:if="${room5} == 0">
+            <a th:href="@{/user/reservation/(roomType=5)}">
+                <div class="card">
+                    <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                    <div class="card_textbox">
+                        <p><b>Suite Ⅴ</b><br>from $200 per night</p>
+                    </div>
+                </div>
+            </a>
+        </th:block>
+        <!-- Reserved -->
+        <th:block th:if="${room5} == 1">
+            <div class="card card-reserved">
+                <img class="card_imgframe" src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" width="100%" alt="Suite_5">
+                <div class="card_textbox">
+                    <p><b>Suite Ⅴ</b><br>from $200 per night<br><b class="text-reserved">Reserved</b></p>
+                </div>
+            </div>
+        </th:block>
+        <!-- /*room5* -->
+    </div>
+    <!-- /*room list* -->
+
+  </div>
+</body>
+</html>
