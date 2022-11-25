@@ -11,30 +11,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hotel_like.hotellikeapplication.dao.iReservationRepository;
+import com.hotel_like.hotellikeapplication.dao.iRoomRepository;
 import com.hotel_like.hotellikeapplication.entity.Reservation;
+import com.hotel_like.hotellikeapplication.entity.Room;
 
 @Controller
 public class ReservationController {
 	@Autowired
 	iReservationRepository reservationRepository;
+	@Autowired
+	iRoomRepository roomRepository;
 	
 	public static Integer maxNo;
+	public static Integer getRoomType;
+	public static Integer getUserId;
 	/**
 	 * display Reservation Page
 	 * @param model
 	 * @throws Exception 
 	 */
 	@GetMapping("/user/reservation")
-    public String displayReservationPage(Model model, Integer userId, Integer roomType) throws Exception{
-	//public String displayReservationPage(Model model) throws Exception{
+    public String displayReservationPage(@RequestParam(name = "roomType")Integer roomType, 
+    									 @RequestParam(name = "userId")Integer userId, Model model) throws Exception{
 		model.addAttribute("reserv", new Reservation());
-//		model.addAttribute("userId", userId);
-//		model.addAttribute("roomType", roomType);
+		getRoomType= roomType;
+		getUserId = userId;
 		
-		model.addAttribute("userId", 1);
-		model.addAttribute("roomType", 3);
+		model.addAttribute("userId", getRoomType);
+		model.addAttribute("roomType", getUserId);
 		
 		setMinAndMaxDate(model);
         return "user/reservation";
@@ -55,7 +62,7 @@ public class ReservationController {
     							  Model model) throws ParseException{
 		
 		//set reservation information
-		reservation.setUserId(userId);
+		reservation.setUserId(getUserId);
 		reservation.setRoomType(roomType);
 		reservation.setStayPeople(options);
 		
@@ -69,6 +76,13 @@ public class ReservationController {
 		
 		//insert new reservation
         reservationRepository.save(reservation);
+        
+        //get a room data by room type
+        Room updateRoom = roomRepository.getRoomDataByRoomType(roomType);
+        updateRoom.setRoomFlg(1);
+        //update room information
+        roomRepository.save(updateRoom);
+        
         return "user/completed";
     }
 	
@@ -92,13 +106,10 @@ public class ReservationController {
 	@PostMapping("/user/completed")
     public String backMainMenu(Reservation reservation, Integer page, Model model){
 		// checking for move page
-		String momePage = "";
 		if(page == 0)
-			momePage = showReservationDetail(model);
-		else if(page == 1)
-			momePage = "user/admin";
-		
-		return momePage;
+			return  showReservationDetail(model);
+		else
+			return "redirect:/user/menu/?userId=" + getUserId;
     }
 	
 	
@@ -113,7 +124,6 @@ public class ReservationController {
 		Reservation reservation = reservationRepository.getReservation(maxNo + 1);
 		
 		model.addAttribute("reserv", reservation);
-		//model.addAttribute("reservNo", reservation.getReservNo());
 		
 		// formatting staying term
 		model.addAttribute("stayDate", reservation.getStrStartDate() + " ~ " +reservation.getStrEndDate()); 

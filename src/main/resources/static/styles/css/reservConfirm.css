@@ -1,0 +1,73 @@
+.container{
+    width: 700px;
+    margin: auto;
+}
+
+.cmp-container{
+    width: 496px;
+    margin: auto;
+}
+
+.input-area{
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    border: solid 1px var(--disabledClr);
+}
+
+.form-group{
+    margin-bottom: 40px;
+}
+
+.select-area{
+    width: 100%;
+    height: 44px;
+    border-radius: 10px;
+    border: solid 1px var(--disabledClr);
+}
+
+.submit-btn{
+    width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    color: var(--whiteClr);
+    background-color: var(--primaryClr);
+    border-color: var(--primaryClr);
+    font-size: var(--btnTxtSize);
+}
+
+.submit-btn:hover {
+    background-color: var(--hoverClr);
+    border-color: var(--hoverClr);
+}
+
+
+.cmp-confirm-btn{
+    width: 300px;
+    height: 46px;
+    background-color: var(--primaryClr);
+    border-radius: 10px;
+    border: none;
+}
+
+.cmp-confirm-btn:hover{
+    background-color: var(--hoverClr);
+}
+
+.back-btn{
+    color: var(--secondaryBtnClr);
+    text-decoration:underline !important;   
+}
+
+.comment p{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 100px;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5em;
+}

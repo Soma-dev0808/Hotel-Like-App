@@ -1,19 +1,15 @@
 package com.hotel_like.hotellikeapplication.controller;
 
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hotel_like.hotellikeapplication.dao.iReservationRepository;
 import com.hotel_like.hotellikeapplication.dao.iRoomRepository;
-import com.hotel_like.hotellikeapplication.dto.ReservationInfo;
-import com.hotel_like.hotellikeapplication.entity.Reservation;
 import com.hotel_like.hotellikeapplication.entity.Room;
 
 @Controller
@@ -26,7 +22,7 @@ public class MenuController {
     iReservationRepository reservationRepository;
 
     @GetMapping("/user/menu")
-    public String checkReserved(Model model) {
+    public String checkReserved( @RequestParam(name = "userId")Integer userId, Model model) {
         int room1 = 0;
         int room2 = 0;
         int room3 = 0;
@@ -62,6 +58,7 @@ public class MenuController {
         model.addAttribute("room3", room3);
         model.addAttribute("room4", room4);
         model.addAttribute("room5", room5);
+        model.addAttribute("userId", userId);
 
         return "user/menu";
     }
