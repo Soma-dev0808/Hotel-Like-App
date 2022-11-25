@@ -9,12 +9,13 @@
     <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
     <link th:href="@{/styles/css/admin.css}" rel="stylesheet" />
     <link th:href="@{/styles/css/header.css}" rel="stylesheet" />
+    <link th:href="@{/styles/css/menu.css}" rel="stylesheet" />
 </head>
 <body>
   <header th:fragment="nav">
     <nav class="navigation-wrapper">
-      <div class="logo logo-txt"><a href="../templates/user/menu.html">VILLA CICCC</a></div>
-      <a class="checkBooking" href="../templates/user/予約確認画面.html">
+      <div class="logo logo-txt"><a th:href="@{/user/menu.html}">VILLA CICCC</a></div>
+      <a class="checkBooking" th:href="@{/user/confirmation.html}">
         <svg class="book-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 25"><path width="100%" d="M5.495 2h16.505v-2h-17c-1.656 0-3 1.343-3 3v18c0 1.657 1.344 3 3 3h17v-20h-16.505c-1.376 0-1.376-2 0-2zm.505 4h7v7l2-2 2 2v-7h3v16h-14v-16z"/></svg>
       </a>
     </nav>

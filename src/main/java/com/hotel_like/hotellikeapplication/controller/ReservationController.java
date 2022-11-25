@@ -13,16 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hotel_like.hotellikeapplication.dao.iReservationRepository;
-import com.hotel_like.hotellikeapplication.dao.iRoomRepository;
 import com.hotel_like.hotellikeapplication.entity.Reservation;
-import com.hotel_like.hotellikeapplication.entity.Room;
 
 @Controller
 public class ReservationController {
 	@Autowired
 	iReservationRepository reservationRepository;
-	@Autowired
-	iRoomRepository roomRepository;
 	
 	public static Integer maxNo;
 	/**
@@ -32,9 +28,10 @@ public class ReservationController {
 	 */
 	@GetMapping("/user/reservation")
     public String displayReservationPage(Model model, Integer userId, Integer roomType) throws Exception{
+	//public String displayReservationPage(Model model) throws Exception{
 		model.addAttribute("reserv", new Reservation());
-		model.addAttribute("userId", userId);
-		model.addAttribute("roomType", roomType);
+//		model.addAttribute("userId", userId);
+//		model.addAttribute("roomType", roomType);
 		
 		model.addAttribute("userId", 1);
 		model.addAttribute("roomType", 3);
@@ -72,13 +69,6 @@ public class ReservationController {
 		
 		//insert new reservation
         reservationRepository.save(reservation);
-        
-        //get a room data by room type
-        Room updateRoom = roomRepository.getRoomDataByRoomType(roomType);
-        updateRoom.setRoomFlg(1);
-        //update room information
-        roomRepository.save(updateRoom);
-        
         return "user/completed";
     }
 	
@@ -111,21 +101,6 @@ public class ReservationController {
 		return momePage;
     }
 	
-	/**
-	 * change String to Date type
-	 * @param strDate
-	 * @return stayDate
-	 * @throws ParseException 
-	 */
-	public Date setStringToDate(String strDate) throws ParseException{
-		//set format
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
-		//change and set
-        Date date = dateFormat.parse(strDate); 
-        
-		return date;
-	}
-	
 	
 	/**
 	 * show a reservation detail
@@ -145,6 +120,20 @@ public class ReservationController {
 		
         return "user/confirmation";
     }
+	
+	
+	/**
+	 * change String to Date type
+	 * @param strDate
+	 * @return stayDate
+	 * @throws ParseException 
+	 */
+	public Date setStringToDate(String strDate) throws ParseException{
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+        Date date = dateFormat.parse(strDate); 
+		return date;
+	}
+	
 	
 	/**
 	 * stetting staying term is one year 
