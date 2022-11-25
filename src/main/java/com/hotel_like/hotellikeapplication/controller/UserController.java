@@ -29,7 +29,7 @@ public class UserController {
             System.out.println("Here is working");
             return "redirect:/user/menu";
         } else {
-            return "redirect:/admin/admin";
+            return "redirect:/admin";
         }
         } else {
             return "redirect:login";
